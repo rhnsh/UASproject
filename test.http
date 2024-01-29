@@ -1,0 +1,101 @@
+# Create User
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "mra",
+  "password" : "rahasia",
+  "name" : "Muhammad Raihan Asshawat"
+}
+
+###
+
+# Login User
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "mra",
+  "password" : "rahasia"
+}
+
+###
+
+# Get Current User
+GET http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: f774798a-8b4f-46d3-9596-a25389a234a2
+
+###
+
+# Update Current User
+PATCH http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: f774798a-8b4f-46d3-9596-a25389a234a2
+
+{
+  "name" : "Raihan new"
+}
+
+###
+
+# Logout User
+DELETE http://localhost:3000/api/users/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: f774798a-8b4f-46d3-9596-a25389a234a2
+
+###
+
+# Create Product
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Accept: application/json
+Authorization: f774798a-8b4f-46d3-9596-a25389a234a2
+
+{
+  "morph" : "shtctb",
+  "indukJantan" : "Sunglow",
+  "indukBetina" : "shtct",
+  "dob" : 10_12_2021,
+  "kelasAlbino" : "Tremper",
+  "jenisKelamin" : "Jantan"
+}
+
+
+###
+
+# Get Product by ID
+GET http://localhost:3000/api/products/22
+Content-Type: application/json
+Accept: application/json
+Authorization: f774798a-8b4f-46d3-9596-a25389a234a2
+
+###
+
+# Update Product by ID
+PUT http://localhost:3000/api/products/22
+Content-Type: application/json
+Accept: application/json
+Authorization: f774798a-8b4f-46d3-9596-a25389a234a2
+
+{
+  "morph" : "macksnow",
+  "indukJantan" : "msr",
+  "indukBetina" : "msr",
+  "dob" : 10_12_2020,
+  "kelasAlbino" : "Tremper",
+  "jenisKelamin" : "Jantan"
+}
+
+###
+
+# Delete Product by ID
+DELETE http://localhost:3000/api/products/22
+Content-Type: application/json
+Accept: application/json
+Authorization: f774798a-8b4f-46d3-9596-a25389a234a2
