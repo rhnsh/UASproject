@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  username String    @id @db.VarChar(100)
+  password String    @db.VarChar(100)
+  name     String    @db.VarChar(100)
+  token    String?   @db.VarChar(100)
+  geckos Gecko[]
+
+  @@map("users")
+}
+
+model Gecko {
+  id             Int       @id @default(autoincrement())
+  morph          String    @db.VarChar(100)
+  induk_jantan   String?   @db.VarChar(100)
+  induk_betina   String?   @db.VarChar(200)
+  dob            String?   @db.VarChar(20)
+  kelas_albino   String?   @db.VarChar(100)
+  jenis_kelamin  String?   @db.VarChar(100)
+  username       String    @db.VarChar(100)
+  user           User      @relation(fields: [username], references: [username])
+
+  @@map("geckos")
+}
